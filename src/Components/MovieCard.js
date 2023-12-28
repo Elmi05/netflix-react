@@ -1,14 +1,23 @@
-function MovieCard() {
+// MovieCard.js
+import React from 'react';
+
+function MovieCard({ title, image, rating, genres, officialWebsite, summary }) {
   return (
     <div className="movie-card">
       <div className="movie-image">
-        <img
-          src="https://i.pinimg.com/originals/a2/34/75/a234753b69e3bd27b7f1d448956c38af.jpg"
-          alt="movie"
-        />
+        <img src={image} alt={title} />
       </div>
 
-      <h3 className="movie-heading">Breaking Bad</h3>
+      <h3 className="movie-heading">{title}</h3>
+
+      <p className="movie-rating">Rating: {rating}</p>
+
+      <p className="movie-genres">Genres: {genres.join(', ')}</p>
+
+
+      <a className="movie-website" href={officialWebsite} target="_blank" rel="noopener noreferrer">
+        Official Website
+      </a>
     </div>
   );
 }
